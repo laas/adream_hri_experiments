@@ -1,0 +1,16 @@
+human_mgmt:
+    HERAKLES_HUMAN1:
+        policy: "move3d::HeadHandUpdater"
+        move3d_name: "RAYMAN_HUMAN1"
+    RAYMAN_HUMAN1:
+        policy: "move3d::HeadHandUpdater"
+        move3d_name: "RAYMAN_HUMAN1"
+    PEPPER_DETECTED_HUMAN:
+        policy: "move3d::HeadHandUpdater"
+        move3d_name: "RAYMAN_HUMAN1"
+
+
+move3d:
+    p3dFile: "/home/jwaldart/ros_ws/src/adream_hri_experiments/p3d/base_pr2.p3d"
+    update_base_only: true
+

@@ -1,0 +1,677 @@
+p3d_beg_desc P3D_ENV ADREAM
+
+# ************* HUMANS ***************
+
+#p3d_read_macro petitVieux.macro HUMAN_OLDDUDE
+#p3d_read_macro AchileMKinect.macro HERAKLES_HUMAN1
+#p3d_set_robot_current 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 4.016000 2.430000 0.965000 0.000000 0.000000 -180.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000
+#p3d_read_macro AchileMKinect.macro HERAKLES_HUMAN2
+#p3d_read_macro AchileMKinect.macro HERAKLES_HUMAN3
+
+#p3d_read_collada rayman/rayman_head_torso.urdf RAYMAN_HUMAN2
+p3d_read_collada rayman/rayman_head_torso.urdf RAYMAN_HUMAN1
+
+# ******* MANIPULATION OBJECT ********
+
+p3d_read_macro ./Objects/Movable/LotrTape.macro             LOTR_TAPE
+p3d_read_macro ./Objects/Movable/WalleTape.macro            WALLE_TAPE
+p3d_read_macro ./Objects/Movable/GreyVideoTape.macro        GREY_TAPE
+p3d_read_macro ./Objects/Movable/BigBlueBox.macro           BLUE_BIN
+
+
+# ************* INTERNAL OBJECTS ***************
+
+#p3d_read_macro pr2_gripper_robot.macro PR2_GRIPPER
+#p3d_read_macro pr2_gripper_robot.macro PR2_GRIPPER_LEFT
+
+# For Mightability Analysis
+p3d_read_macro ./Objects/Movable/test_cube_Mightability.macro VISBALL_MIGHTABILITY
+p3d_read_macro ./Objects/Movable/test_bar_Mightability.macro HUM_BAR
+
+
+#For calculating Graspability of Human. Don't remove any of the below. Both are required at different places of grasp computation
+p3d_read_macro SAHandRight_robot.macro SAHandRight
+p3d_read_macro SAHandRight_robot.macro SAHandRight2
+
+p3d_read_macro ./Objects/Movable/PR2Cylinder.macro PR_2CYLINDER
+
+p3d_read_macro ./Objects/Movable/HumanCylinder.macro HUMCYLINDER
+
+
+
+##############################################
+#                                            #
+# ************* APPART FURNITURE ************#
+#                                            #
+##############################################
+
+
+# element that need to be replace in the environment - DO NOT USE AS IS 
+#p3d_read_macro ./Objects/MovableObstacles/IKEA_lamp_ORGEL.macro LAMP_1
+#p3d_set_robot_current 0 0 0 0 0 0 4.865 5.292 0 0 0 0
+#p3d_set_robot_goto 0 0 0 0 0 0 0 0 0 0 0 0
+#p3d_read_macro ./Objects/Static/IKEA_lamp_ORGEL_obs.macro LAMP_1
+#p3d_set_obst_pos LAMP_1 4.865 5.34 0.739 0 -90 90
+
+# elements that could be used to set up a particular demo
+#p3d_read_macro ./Objects/MovableObstacles/DESK_ADREAM.macro CTL_TABLE
+#p3d_set_robot_current 0 0 0 0 0 0 7.099 4.423 0 0 0 -90
+#p3d_set_robot_goto 0 0 0 0 0 0 0 0 0 0 0 0
+#p3d_read_macro hrp2table.macro HRP2TABLE
+#p3d_read_macro ./Objects/MovableObstacles/DESK_ADREAM.macro DESK
+p3d_read_macro ./Objects/MovableObstacles/TABLE_ADREAM.macro TABLE_4
+p3d_set_robot_current 0 0 0 0 0 0 7.16 4.40 0 0 0 -90
+p3d_set_robot_goto 0 0 0 0 0 0 0 0 0 0 0 0
+#p3d_read_macro ./Objects/MovableObstacles/DRAWERS.macro DRAWERS_1
+#p3d_read_macro ./Objects/MovableObstacles/CUPBOARD_TALL_OPPENNED.macro CUPBOARD
+#p3d_read_macro ./Objects/MovableObstacles/M_WALL.macro M_WALL_1
+#p3d_read_macro ./Objects/MovableObstacles/M_WALL.macro M_WALL_2
+
+#############################
+#         LOUNGE            #
+#############################
+p3d_read_macro ./Objects/MovableObstacles/IKEA_carpet_dragor.macro CARPET
+p3d_set_robot_current 0 0 0 0 0 0 4.58 7.02 0 0 0 0
+p3d_set_robot_goto 0 0 0 0 0 0 0 0 0 0 0 0
+#p3d_read_macro ./Objects/Static/IKEA_carpet_dragor_obs.macro CARPET
+#p3d_set_obst_pos CARPET 4.58 8.52 0 0 -90 90
+
+p3d_read_macro ./Objects/MovableObstacles/IKEA_armchair_ektorp.macro FAUTEUIL_1
+p3d_set_robot_current 0 0 0 0 0 0 4.35 5.73 0 0 0 -164
+p3d_set_robot_goto 0 0 0 0 0 0 0 0 0 0 0 0
+##p3d_read_macro ./Objects/Static/IKEA_armchair_ektorp_obs.macro FAUTEUIL_1
+##p3d_set_obst_pos FAUTEUIL_1 4.253 6.06 0.404 0 -90 106.052
+
+p3d_read_macro ./Objects/MovableObstacles/IKEA_armchair_ektorp.macro FAUTEUIL_2
+p3d_set_robot_current 0 0 0 0 0 0 3.37 8.15 0 0 0 48
+p3d_set_robot_goto 0 0 0 0 0 0 0 0 0 0 0 0
+##p3d_read_macro ./Objects/Static/IKEA_armchair_ektorp_obs.macro FAUTEUIL_2
+##p3d_set_obst_pos FAUTEUIL_2 3.625 7.92 0.404 0 -90 -42
+
+p3d_read_macro ./Objects/MovableObstacles/IKEA_low_table_lack_2.macro LOW_TABLE_LARGE
+p3d_set_robot_current 0 0 0 0 0 0 4.17 6.76 0 0 0 16
+p3d_set_robot_goto 0 0 0 0 0 0 0 0 0 0 0 0
+#p3d_read_macro ./Objects/Static/IKEA_low_table_lack_2_obs.macro LOW_TABLE_LARGE
+#p3d_set_obst_pos LOW_TABLE_LARGE 4.297 6.316 0.225 0 -90 -74
+
+p3d_read_macro ./Objects/MovableObstacles/IKEA_sofa_ektorp.macro SOFA
+p3d_set_robot_current 0 0 0 0 0 0 3.1 6.6 0 0 0 109
+p3d_set_robot_goto 0 0 0 0 0 0 0 0 0 0 0 0
+##p3d_read_macro ./Objects/Static/IKEA_sofa_ektorp_obs.macro SOFA
+##p3d_set_obst_pos SOFA 3.57 6.764 0.511 0 -90 19
+
+#p3d_read_macro ./Objects/Static/basic_pillow_obs.macro PILLOW_1
+#p3d_set_obst_pos PILLOW_1 0 0 0 0 0 0
+#p3d_read_macro ./Objects/MovableObstacles/basic_pillow.macro PILLOW_1
+#p3d_set_robot_current 0 0 0 0 0 0 3.234000 6.775000 0.560000 0 0 29.664000
+#p3d_set_robot_goto 0 0 0 0 0 0 0 0 0 0 0 0
+
+#p3d_read_macro ./Objects/Static/basic_pillow_obs.macro PILLOW_2
+#p3d_set_obst_pos PILLOW_2 0 0 0 0 0 0
+#p3d_read_macro ./Objects/MovableObstacles/basic_pillow.macro PILLOW_2
+#p3d_set_robot_current 0 0 0 0 0 0 3.808 6.082 0.560000 0 0 29.664000
+#p3d_set_robot_goto 0 0 0 0 0 0 0 0 0 0 0 0
+
+#p3d_read_macro ./Objects/Static/IKEA_Plant_1_obs.macro PLANT1
+#p3d_set_obst_pos PLANT1 3.914 5.44 1.253 0 -90 0
+p3d_read_macro ./Objects/MovableObstacles/IKEA_Plant_1.macro PLANT1
+p3d_set_robot_current 0 0 0 0 0 0 3.414 5.44 0 0 0 0
+p3d_set_robot_goto 0 0 0 0 0 0 0 0 0 0 0 0
+
+p3d_read_macro ./Objects/MovableObstacles/IKEA_shelf_expedit_dark.macro IKEA_SHELF_DARK
+p3d_set_robot_current 0 0 0 0 0 0 3.733 4.835 0.791 0 0 90
+p3d_set_robot_goto 0 0 0 0 0 0 0 0 0 0 0 0
+
+p3d_read_macro ./Objects/MovableObstacles/IKEA_shelf_expedit_light.macro IKEA_SHELF_LIGHT_1
+p3d_set_robot_current 0 0 0 0 0 0 3.733 4.835 0 0 0 90
+p3d_set_robot_goto 0 0 0 0 0 0 0 0 0 0 0 0
+
+p3d_read_macro ./Objects/MovableObstacles/IKEA_shelf_expedit_light.macro IKEA_SHELF_LIGHT_2
+p3d_set_robot_current 0 0 0 0 0 0 4.523 4.835 0 0 0 90
+p3d_set_robot_goto 0 0 0 0 0 0 0 0 0 0 0 0
+
+#############################
+#         BEDROOM           #
+#############################
+p3d_read_macro ./Objects/Static/IKEA_bed_FJELLSE_obs.macro BED
+p3d_set_obst_pos BED 4.449 11.107 0.398 0 -90 0
+#p3d_read_macro ./Objects/MovableObstacles/IKEA_bed_FJELLSE.macro BED
+#p3d_set_robot_current 0 0 0 0 0 0 3.43 11.093 0 0 0 90
+#p3d_set_robot_goto 0 0 0 0 0 0 0 0 0 0 0 0
+
+#p3d_read_macro ./Objects/Static/IKEA_chair_STEFAN_obs.macro STEFAN_5
+#p3d_set_obst_pos STEFAN_5 2.889 10.13 0.449 0 -90.0 0.0
+#p3d_read_macro ./Objects/MovableObstacles/IKEA_chair_STEFAN.macro STEFAN_5
+#p3d_set_robot_current 0 0 0 0 0 0 2.68 10.13 0.0 0 0.0 90.0 
+#p3d_set_robot_goto 0 0 0 0 0 0 0 0 0 0 0 0
+
+#p3d_read_macro ./Objects/Static/IKEA_console_HEMNES_obs.macro CONSOLE
+#p3d_set_obst_pos CONSOLE 5.984 11.715 0.371 0 -90 -180
+p3d_read_macro ./Objects/MovableObstacles/IKEA_console_HEMNES.macro CONSOLE
+p3d_set_robot_current 0 0 0 0 0 0 6.16 11.67 0 0 0 -90
+p3d_set_robot_goto 0 0 0 0 0 0 0 0 0 0 0 0
+
+p3d_read_macro ./Objects/Static/IKEA_chest_HEMNES_obs.macro CHEST
+p3d_set_obst_pos CHEST 3.853 12.671000 0.52 0 -90 -90
+#p3d_read_macro ./Objects/MovableObstacles/IKEA_chest_HEMNES.macro CHEST
+#p3d_set_robot_current 0 0 0 0 0 0 6.117000 11.671000 0 0 0 -90
+#p3d_set_robot_goto 0 0 0 0 0 0 0 0 0 0 0 0
+
+p3d_read_macro ./Objects/Static/IKEA_low_table_lack_1_obs.macro LOW_TABLE_SMALL_1
+p3d_set_obst_pos LOW_TABLE_SMALL_1 2.66 11.61 0.225 0 -90 -90
+#p3d_read_macro ./Objects/MovableObstacles/IKEA_low_table_lack_1.macro LOW_TABLE_SMALL_1
+#p3d_set_robot_current 0 0 0 0 0 0 2.72 10.13 0 0 0 0
+#p3d_set_robot_goto 0 0 0 0 0 0 0 0 0 0 0 0
+
+p3d_read_macro ./Objects/Static/IKEA_cupboard_BILLY_1_obs.macro BILLY_LONG
+p3d_set_obst_pos BILLY_LONG 2.772000 9.415 1.01 0 -90 90
+#p3d_read_macro ./Objects/MovableObstacles/IKEA_cupboard_BILLY_1.macro BILLY_LONG
+#p3d_set_robot_current 0 0 0 0 0 0 2.772000 9.275 0 0 0 180
+#p3d_set_robot_goto 0 0 0 0 0 0 0 0 0 0 0 0
+
+#############################
+#         DINING ROOM       #
+#############################
+#p3d_read_macro ./Objects/Static/IKEA_chair_PELLO_obs.macro PELLO_1
+#p3d_set_obst_pos PELLO_1 0 0 0 0 0 0
+#p3d_read_macro ./Objects/MovableObstacles/IKEA_chair_PELLO.macro PELLO_1
+#p3d_set_robot_current 0 0 0 0 0 0 7.555000 12.807000 0 0 0 0
+#p3d_set_robot_goto 0 0 0 0 0 0 0 0 0 0 0 0
+
+#p3d_read_macro ./Objects/Static/IKEA_chair_PELLO_obs.macro PELLO_2
+#p3d_set_obst_pos PELLO_2 0 0 0 0 0 0
+#p3d_read_macro ./Objects/MovableObstacles/IKEA_chair_PELLO.macro PELLO_2
+#p3d_set_robot_current 0 0 0 0 0 0 6.799000 11.896 0 0 0 90
+#p3d_set_robot_goto 0 0 0 0 0 0 0 0 0 0 0 0
+
+#p3d_read_macro ./Objects/Static/IKEA_chair_STEFAN_obs.macro STEFAN_1
+#p3d_set_obst_pos STEFAN_1 0 0 0.449 0 0 0
+#p3d_read_macro ./Objects/MovableObstacles/IKEA_chair_STEFAN.macro STEFAN_1
+#p3d_set_robot_current 0 0 0 0 0 0 9.006000 11.671000 0 0 0 0
+#p3d_set_robot_goto 0 0 0 0 0 0 0 0 0 0 0 0
+
+#p3d_read_macro ./Objects/Static/IKEA_chair_STEFAN_obs.macro STEFAN_2
+#p3d_set_obst_pos STEFAN_2 0 0 0.449 0 0 0
+#p3d_read_macro ./Objects/MovableObstacles/IKEA_chair_STEFAN.macro STEFAN_2
+#p3d_set_robot_current 0 0 0 0 0 0 8.582000 11.522000 0 0 0 90
+#p3d_set_robot_goto 0 0 0 0 0 0 0 0 0 0 0 0
+
+#p3d_read_macro ./Objects/Static/IKEA_chair_STEFAN_obs.macro STEFAN_3
+#p3d_set_obst_pos STEFAN_3 0 0 0.449 0 0 0
+#p3d_read_macro ./Objects/MovableObstacles/IKEA_chair_STEFAN.macro STEFAN_3
+#p3d_set_robot_current 0 0 0 0 0 0 8.613000 10.829000 0 0 0 90
+#p3d_set_robot_goto 0 0 0 0 0 0 0 0 0 0 0 0
+
+#p3d_read_macro ./Objects/Static/IKEA_chair_STEFAN_obs.macro STEFAN_4
+#p3d_set_obst_pos STEFAN_4 0 0 0.449 0 0 0
+#p3d_read_macro ./Objects/MovableObstacles/IKEA_chair_STEFAN.macro STEFAN_4
+#p3d_set_robot_current 0 0 0 0 0 0 9.096000 10.681000 0 0 0 180
+#p3d_set_robot_goto 0 0 0 0 0 0 0 0 0 0 0 0
+
+p3d_read_macro ./Objects/Static/IKEA_low_table_lack_1_obs.macro LOW_TABLE_SMALL_2
+p3d_set_obst_pos LOW_TABLE_SMALL_2 6.718 12.589 0.225 0 -90 -90
+#p3d_read_macro ./Objects/MovableObstacles/IKEA_low_table_lack_1.macro LOW_TABLE_SMALL_2
+#p3d_set_robot_current 0 0 0 0 0 0 6.718 12.889 0 0 0 0
+#p3d_set_robot_goto 0 0 0 0 0 0 0 0 0 0 0 0
+
+p3d_read_macro ./Objects/Static/IKEA_RUTBO_obs.macro LAMP_2
+p3d_set_obst_pos LAMP_2 6.74 13.005 1.074 0 -90 0
+#p3d_read_macro ./Objects/MovableObstacles/IKEA_RUTBO.macro LAMP_2
+#p3d_set_robot_current 0 0 0 0 0 0 6.769 13.005 0.45 0 0 0
+#p3d_set_robot_goto 0 0 0 0 0 0 0 0 0 0 0 0
+
+p3d_read_macro ./Objects/Static/IKEA_table_TORSBY_obs.macro TABLE_TORSBY
+p3d_set_obst_pos TABLE_TORSBY 9.424 11.206 0.74 0 -90 0
+#p3d_read_macro ./Objects/MovableObstacles/IKEA_table_TORSBY.macro TABLE_TORSBY
+#p3d_set_robot_current 0 0 0 0 0 0 9.002 11.206 0 0 0 90
+#p3d_set_robot_goto 0 0 0 0 0 0 0 0 0 0 0 0
+
+#p3d_read_macro ./Objects/Static/IKEA_Plant_2_obs.macro PLANT2
+#p3d_set_obst_pos PLANT2 9.549 12.413000 0.707 0 -90 0
+p3d_read_macro ./Objects/MovableObstacles/IKEA_Plant_2.macro PLANT2
+p3d_set_robot_current 0 0 0 0 0 0 9.006 12.413 0 0 0 -59.328000
+p3d_set_robot_goto 0 0 0 0 0 0 0 0 0 0 0 0
+
+p3d_read_macro ./Objects/Static/IKEA_cupboard_BILLY_2_obs.macro BILLY_SMALL1
+p3d_set_obst_pos BILLY_SMALL1 9.227000 9.444 0.53 0 -90 90
+#p3d_read_macro ./Objects/MovableObstacles/IKEA_cupboard_BILLY_2.macro BILLY_SMALL1
+#p3d_set_robot_current 0 0 0 0 0 0 9.227000 9.275000 0 0 0 180
+#p3d_set_robot_goto 0 0 0 0 0 0 0 0 0 0 0 0
+
+p3d_read_macro ./Objects/Static/IKEA_cupboard_BILLY_2_obs.macro BILLY_SMALL2
+p3d_set_obst_pos BILLY_SMALL2 8.827000 9.444 0.53 0 -90 90
+#p3d_read_macro ./Objects/MovableObstacles/IKEA_cupboard_BILLY_2.macro BILLY_SMALL2
+#p3d_set_robot_current 0 0 0 0 0 0 8.827000 9.275000 0 0 0 180
+#p3d_set_robot_goto 0 0 0 0 0 0 0 0 0 0 0 0
+
+p3d_read_macro ./Objects/Static/IKEA_cupboard_BILLY_3_obs.macro BILLY_LARGE
+p3d_set_obst_pos BILLY_LARGE 6.76 10.697000 0.53 0 -90 0
+#p3d_read_macro ./Objects/MovableObstacles/IKEA_cupboard_BILLY_3.macro BILLY_LARGE
+#p3d_set_robot_current 0 0 0 0 0 0 6.583000 10.697000 0 0 0 90
+#p3d_set_robot_goto 0 0 0 0 0 0 0 0 0 0 0 0
+
+
+#######################################################
+#                                                     # 
+# ********** FIXED FURNITURE OF ADREAM ROOM ********* #
+#                                                     #
+#######################################################
+
+  p3d_read_macro ./Objects/Static/cupboard_small.macro cupboard_small1
+  p3d_set_obst_pos cupboard_small1 5.9 -0.6 0 0.0 0.0 0.0
+
+  p3d_read_macro ./Objects/Static/cupboard_small.macro cupboard_small2
+  p3d_set_obst_pos cupboard_small2 5.9 -1.85 0 0.0 0.0 0.0
+
+#  p3d_read_macro ./Objects/Static/cupboard_small.macro cupboard_small3
+#  p3d_set_obst_pos cupboard_small3 5.5 0.3 0 0.0 0.0 90.0
+
+  p3d_read_macro ./Objects/Static/cupboard_tall_closed.macro cupboard_tall1
+  p3d_set_obst_pos cupboard_tall1 6.3 -6 0 0.0 0.0 90.0
+
+  p3d_read_macro ./Objects/Static/cupboard_tall_closed.macro cupboard_tall2
+  p3d_set_obst_pos cupboard_tall2 7.55 -6 0 0.0 0.0 90.0
+
+  p3d_read_macro ./Objects/Static/cupboard_tall_closed.macro cupboard_tall3
+  p3d_set_obst_pos cupboard_tall3 8.8 -6 0 0.0 0.0 90.0
+
+#  p3d_read_macro ./Objects/Static/table_adream_obs.macro table_adream_obs1
+#  p3d_set_obst_pos table_adream_obs1 1.84 -2.48 0 0.0 0.0 90.0
+
+#  p3d_read_macro ./Objects/Static/table_adream_obs.macro table_adream_obs2
+#  p3d_set_obst_pos table_adream_obs2 3.24 -2.48 0 0.0 0.0 90.0
+
+#  p3d_read_macro ./Objects/Static/table_adream_obs.macro table_adream_obs3
+#  p3d_set_obst_pos table_adream_obs3 1.49 -3.53 0 0 0.0 0.0
+
+#  p3d_read_macro ./Objects/Static/table_adream_obs.macro table_adream_obs4
+#  p3d_set_obst_pos table_adream_obs4 3.59 -3.53 0 0 0.0 0.0
+
+#  p3d_read_macro ./Objects/Static/table_adream_obs.macro table_adream_obs5
+#  p3d_set_obst_pos table_adream_obs5 3.24 -4.58 0 0.0 0.0 90.0
+
+#  p3d_read_macro ./Objects/Static/table_adream_obs.macro table_adream_obs6
+#  p3d_set_obst_pos table_adream_obs6 1.84 -4.58 0 0.0 0.0 90.0
+
+  p3d_read_macro ./Objects/Static/desk_adream_obs.macro desk_adream_obs1
+  p3d_set_obst_pos desk_adream_obs1 8.7 4.42 0 0.0 0.0 90.0
+
+  p3d_read_macro ./Objects/Static/desk_adream_obs.macro desk_adream_obs2
+  p3d_set_obst_pos desk_adream_obs2 9.1 5.62 0 0.0 0.0 0.0
+
+  p3d_read_macro ./Objects/Static/desk_adream_obs.macro desk_adream_obs3
+  p3d_set_obst_pos desk_adream_obs3 9.1 7.22 0 0.0 0.0 0.0
+
+# corresponds to the control desk
+#  p3d_read_macro ./Objects/Static/desk_adream_obs.macro desk_adream_obs4
+#  p3d_set_obst_pos desk_adream_obs4 7.1 4.42 0 0.0 0.0 90.0
+
+
+#######################################################
+#                                                     # 
+#            ADREAM BUILDING ELEMENTS                 #
+#                                                     #
+#######################################################
+
+  p3d_read_macro OB_window_h22_003.macro OB_window_h22_003
+  p3d_set_obst_pos OB_window_h22_003 5.558603 -5.335776 0.992164 0.0 0.0 0.0
+
+  p3d_read_macro OB_window_h22_002.macro OB_window_h22_002
+  p3d_set_obst_pos OB_window_h22_002 5.551207 -1.053014 0.992164 0.0 0.0 0.0
+
+  p3d_read_macro OB_window_h22_001.macro OB_window_h22_001
+  p3d_set_obst_pos OB_window_h22_001 4.7462 -0.046988 0.992164 0.0 0.0 0.0
+
+  p3d_read_macro OB_Floor_h016_002.macro OB_Floor_h016_002
+  p3d_set_obst_pos OB_Floor_h016_002 -11.193838 14.936012 -0.020178 0.0 0.0 0.0
+
+  p3d_read_macro OB_Floor_h016_001.macro OB_Floor_h016_001
+  p3d_set_obst_pos OB_Floor_h016_001 -12.831446 8.701579 -0.020184 0.0 0.0 0.0
+
+  p3d_read_macro OB_door_h20_10_001.macro OB_door_h20_10_001
+  p3d_set_obst_pos OB_door_h20_10_001 -0.098751 -3.762795 -0.003534 0.0 0.0 0.0
+
+  p3d_read_macro OB_door_h20_9_001.macro OB_door_h20_9_001
+  p3d_set_obst_pos OB_door_h20_9_001 -0.100836 -4.484912 -0.003534 0.0 0.0 0.0
+
+  p3d_read_macro OB_window_h20_1_002.macro OB_window_h20_1_002
+  p3d_set_obst_pos OB_window_h20_1_002 -2.851672 8.313329 0.003443 0.0 0.0 0.0
+
+  p3d_read_macro OB_glass_wall_h20_2_001.macro OB_glass_wall_h20_2_001
+  p3d_set_obst_pos OB_glass_wall_h20_2_001 -5.367128 8.306087 0.00094 0.0 0.0 0.0
+
+  p3d_read_macro OB_window_h20_1_001.macro OB_window_h20_1_001
+  p3d_set_obst_pos OB_window_h20_1_001 -0.051398 16.889879 -4.8e-05 0.0 0.0 0.0
+
+  p3d_read_macro OB_window_h22.macro OB_window_h22
+  p3d_set_obst_pos OB_window_h22 8.21899 18.455753 0.992163 0.0 0.0 0.0
+
+  p3d_read_macro OB_window_h20_2.macro OB_window_h20_2
+  p3d_set_obst_pos OB_window_h20_2 -0.058829 1.192303 0.986874 0.0 0.0 0.0
+
+  p3d_read_macro OB_window_h20_1.macro OB_window_h20_1
+  p3d_set_obst_pos OB_window_h20_1 -0.058828 3.71841 0.986873 0.0 0.0 0.0
+
+  p3d_read_macro OB_glass_wall_h20_2.macro OB_glass_wall_h20_2
+  p3d_set_obst_pos OB_glass_wall_h20_2 -0.058829 6.240549 0.000939 0.0 0.0 0.0
+
+  p3d_read_macro OB_glass_wall_h10.macro OB_glass_wall_h10
+  p3d_set_obst_pos OB_glass_wall_h10 -5.09537 20.270982 0.006048 0.0 0.0 0.0
+
+  p3d_read_macro OB_door_h15_2.macro OB_door_h15_2
+  p3d_set_obst_pos OB_door_h15_2 -5.31683 8.341848 -0.003536 0.0 0.0 0.0
+
+  p3d_read_macro OB_door_h15_1.macro OB_door_h15_1
+  p3d_set_obst_pos OB_door_h15_1 -6.27011 7.921608 -0.003537 0.0 0.0 0.0
+
+  p3d_read_macro OB_Floor_h020bis.macro OB_Floor_h020bis
+  p3d_set_obst_pos OB_Floor_h020bis 10.510455 -7.157069 -0.020176 0.0 0.0 0.0
+
+  p3d_read_macro OB_Floor_h002.macro OB_Floor_h002
+  p3d_set_obst_pos OB_Floor_h002 1.891483 26.069791 -0.02018 0.0 0.0 0.0
+
+  p3d_read_macro OB_Floor_h004.macro OB_Floor_h004
+  p3d_set_obst_pos OB_Floor_h004 7.806162 24.701617 -0.020181 0.0 0.0 0.0
+
+  p3d_read_macro OB_Floor_h016.macro OB_Floor_h016
+  p3d_set_obst_pos OB_Floor_h016 1.880449 22.384297 -0.02018 0.0 0.0 0.0
+
+  p3d_read_macro OB_Floor_h023.macro OB_Floor_h023
+  p3d_set_obst_pos OB_Floor_h023 1.913553 19.730413 -0.02018 0.0 0.0 0.0
+
+  p3d_read_macro OB_Floor_h003.macro OB_Floor_h003
+  p3d_set_obst_pos OB_Floor_h003 8.449289 27.133835 -0.02018 0.0 0.0 0.0
+
+  p3d_read_macro OB_Floor_h022.macro OB_Floor_h022
+  p3d_set_obst_pos OB_Floor_h022 7.825918 21.021344 -0.020181 0.0 0.0 0.0
+
+  p3d_read_macro OB_Floor_h030.macro OB_Floor_h030
+  p3d_set_obst_pos OB_Floor_h030 13.480886 10.233255 -0.020179 0.0 0.0 0.0
+
+  p3d_read_macro OB_Cube.macro OB_Cube
+  p3d_set_obst_pos OB_Cube -2.605151 12.099866 -0.010574 0.0 0.0 0.0
+
+  p3d_read_macro OB_door_h10_2.macro OB_door_h10_2
+  p3d_set_obst_pos OB_door_h10_2 -6.569137 19.70783 -0.003537 0.0 0.0 0.0
+
+  p3d_read_macro OB_door_h10_1.macro OB_door_h10_1
+  p3d_set_obst_pos OB_door_h10_1 -5.431018 20.037027 -0.003537 0.0 0.0 0.0
+
+  p3d_read_macro OB_door_h20_9.macro OB_door_h20_9
+  p3d_set_obst_pos OB_door_h20_9 0.103941 6.942373 -0.003536 0.0 0.0 0.0
+
+  p3d_read_macro OB_door_h20_10.macro OB_door_h20_10
+  p3d_set_obst_pos OB_door_h20_10 -0.039268 6.18629 -0.003536 0.0 0.0 0.0
+
+  p3d_read_macro OB_door_h20_3.macro OB_door_h20_3
+  p3d_set_obst_pos OB_door_h20_3 11.383687 -4.346301 -0.003534 0.0 0.0 0.0
+
+  p3d_read_macro OB_door_h20_4.macro OB_door_h20_4
+  p3d_set_obst_pos OB_door_h20_4 11.308388 -3.306563 -0.003534 0.0 0.0 0.0
+
+  p3d_read_macro OB_door_h20_6.macro OB_door_h20_6
+  p3d_set_obst_pos OB_door_h20_6 11.548313 6.455833 -0.003535 0.0 0.0 0.0
+
+  p3d_read_macro OB_door_h20_5.macro OB_door_h20_5
+  p3d_set_obst_pos OB_door_h20_5 11.549311 5.558051 -0.003535 0.0 0.0 0.0
+
+  p3d_read_macro OB_door_h20_7.macro OB_door_h20_7
+  p3d_set_obst_pos OB_door_h20_7 11.145981 15.13096 -0.003535 0.0 0.0 90.0
+
+  #p3d_read_macro OB_door_h20_7.macro OB_door_h20_7
+  #p3d_set_obst_pos OB_door_h20_7 11.545981 15.53096 -0.003535 0.0 0.0 0.0
+
+  p3d_read_macro OB_door_h20_8.macro OB_door_h20_8
+  p3d_set_obst_pos OB_door_h20_8 11.328913 16.501449 -0.003535 0.0 0.0 -65.0
+
+  #p3d_read_macro OB_door_h20_8.macro OB_door_h20_8
+  #p3d_set_obst_pos OB_door_h20_8 11.328913 16.501449 -0.003535 0.0 0.0 0.0
+
+  p3d_read_macro OB_glass_wall_h20_1.macro OB_glass_wall_h20_1
+  p3d_set_obst_pos OB_glass_wall_h20_1 11.57964 6.140938 0.000941 0.0 0.0 0.0
+
+  p3d_read_macro OB_door_h22_2.macro OB_door_h22_2
+  p3d_set_obst_pos OB_door_h22_2 5.338903 18.48348 -0.000134 0.0 0.0 0.0
+
+  p3d_read_macro OB_door_h23_2.macro OB_door_h23_2
+  p3d_set_obst_pos OB_door_h23_2 1.176462 18.452763 -0.000134 0.0 0.0 0.0
+
+  p3d_read_macro OB_door_h21_2.macro OB_door_h21_2
+  p3d_set_obst_pos OB_door_h21_2 1.22254 -0.009429 -0.000132 0.0 0.0 0.0
+
+  p3d_read_macro OB_door_h21_1.macro OB_door_h21_1
+  p3d_set_obst_pos OB_door_h21_1 0.359793 -0.477441 -0.000132 0.0 0.0 0.0
+
+  p3d_read_macro OB_door_h16_1.macro OB_door_h16_1
+  p3d_set_obst_pos OB_door_h16_1 -0.190618 21.925301 -0.000132 0.0 0.0 0.0
+
+  p3d_read_macro OB_door_h22_1.macro OB_door_h22_1
+  p3d_set_obst_pos OB_door_h22_1 4.534189 18.850522 -0.000134 0.0 0.0 0.0
+
+  p3d_read_macro OB_door_h23_1.macro OB_door_h23_1
+  p3d_set_obst_pos OB_door_h23_1 0.406078 18.829188 -0.000134 0.0 0.0 0.0
+
+  p3d_read_macro OB_Floor_h010.macro OB_Floor_h010
+  p3d_set_obst_pos OB_Floor_h010 -5.935079 16.067387 0.029616 0.0 0.0 0.0
+
+  p3d_read_macro OB_Floor_h020.macro OB_Floor_h020
+  p3d_set_obst_pos OB_Floor_h020 5.761528 6.093259 -0.020179 0.0 0.0 0.0
+
+  p3d_read_macro OB_Floor_h021.macro OB_Floor_h021
+  p3d_set_obst_pos OB_Floor_h021 2.728115 -3.179688 -0.020179 0.0 0.0 0.0
+
+  p3d_read_macro OB_Floor_h006.macro OB_Floor_h006
+  p3d_set_obst_pos OB_Floor_h006 4.630273 -8.774279 -0.020181 0.0 0.0 0.0
+
+  p3d_read_macro OB_door_h20_2.macro OB_door_h20_2
+  p3d_set_obst_pos OB_door_h20_2 -0.333718 14.25158 -0.000133 0.0 0.0 0.0
+
+  p3d_read_macro OB_door_h20_1.macro OB_door_h20_1
+  p3d_set_obst_pos OB_door_h20_1 -0.171712 15.217306 -0.000133 0.0 0.0 0.0
+
+  p3d_read_macro OB_solar_alley.macro OB_solar_alley
+  p3d_set_obst_pos OB_solar_alley 14.48966 10.219825 -1.1e-05 0.0 0.0 0.0
+
+  p3d_read_macro OB_door_h14.macro OB_door_h14
+  p3d_set_obst_pos OB_door_h14 -6.68045 9.805541 -0.000134 0.0 0.0 0.0
+
+  p3d_read_macro OB_walls.macro OB_walls
+  p3d_set_obst_pos OB_walls -3.521082 8.695699 -0.002321 0.0 0.0 0.0
+
+  p3d_read_macro OB_solar_panels.macro OB_solar_panels
+  p3d_set_obst_pos OB_solar_panels 15.246885 10.187588 -0.031245 0.0 0.0 0.0
+
+  p3d_read_macro OB_Parking.macro OB_Parking
+  p3d_set_obst_pos OB_Parking 29.192579 7.631816 -0.160768 0.0 0.0 0.0
+
+  p3d_read_macro OB_C6_plein_ext_P.macro OB_C6_plein_ext_P
+  p3d_set_obst_pos OB_C6_plein_ext_P 5.9 9.099796 -0.00018 0.0 0.0 0.0
+
+  #p3d_read_macro OB_C6_plein_ext_P1.macro OB_C6_plein_ext_P1
+  #p3d_set_obst_pos OB_C6_plein_ext_P1 4.888551 6.516207 -0.00018 0.0 0.0 0.0
+
+
+
+
+# ************* ROBOTS ***************
+
+p3d_read_collada pepper/pepper.urdf PEPPER_ROBOT1
+p3d_set_robot_current 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.0 0.0 0 0.000000 0.000000 0.000000 0 0 0 0 0 0 1 0 -1 0 0 0 0 0 0 0 0 0 0 0 0 0 15 0 0 0 -1 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 15 0 0 0 0 0 
+
+# p3d_read_macro pr2.macro PR2_ROBOT
+# p3d_set_robot_current 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 2.046000 2.653000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000
+
+p3d_end_desc
+
+# p3d_add_desc_rob_col_init PR2_ROBOT
+# p3d_desactivate_col_check automatic
+# 
+# p3d_desactivate_col_check larm.larm1 larm.larm3
+# p3d_desactivate_col_check rarm.rarm1 rarm.rarm3
+# 
+# p3d_set_env_box 0 9 0 16 0 3
+# 
+# p3d_set_ff_limits_in_env_box
+# 
+# p3d_sel_desc_name P3D_ROBOT PR2_ROBOT
+# p3d_set_jnt_dofs_min_max 1 0 11 0 18 0 0.01 0 0.01 0 0.01 -180 180
+# 
+# 
+# 
+# #################################
+# ###### COLLISION DEACTIVATION ####
+# ##################################
+# 
+# # For Pr2
+# p3d_add_desc_rob_col_init PR2_ROBOT
+# p3d_desactivate_col_check automatic
+# 
+# 
+# #Base
+# p3d_desactivate_col_check base.Gbase head.GpanCamera
+# p3d_desactivate_col_check base.Gbase head.Gtilt
+# p3d_desactivate_col_check base.Gbase head.Glaser
+# 
+# p3d_desactivate_col_check base.Gbase larm.Glarm1
+# p3d_desactivate_col_check base.Gbase rarm.Grarm1
+# p3d_desactivate_col_check base.Gbase larm.Glarm2
+# p3d_desactivate_col_check base.Gbase rarm.Grarm2
+# 
+# #Torso
+# p3d_desactivate_col_check torso.Gtorso head.Gtilt
+# p3d_desactivate_col_check torso.Gtorso larm.Glarm2
+# p3d_desactivate_col_check torso.Gtorso rarm.Grarm2
+# 
+# #Head
+# p3d_desactivate_col_check head.GpanCamera head.Glaser
+# p3d_desactivate_col_check head.GpanCamera larm.Glarm1
+# p3d_desactivate_col_check head.GpanCamera larm.Glarm2
+# p3d_desactivate_col_check head.GpanCamera rarm.Grarm1
+# p3d_desactivate_col_check head.GpanCamera rarm.Grarm2
+# 
+# p3d_desactivate_col_check head.Gtilt head.Glaser
+# p3d_desactivate_col_check head.Gtilt larm.Glarm1
+# p3d_desactivate_col_check head.Gtilt larm.Glarm2
+# p3d_desactivate_col_check head.Gtilt rarm.Grarm1
+# p3d_desactivate_col_check head.Gtilt rarm.Grarm2
+# 
+# p3d_desactivate_col_check head.Glaser larm.Glarm1
+# p3d_desactivate_col_check head.Glaser larm.Glarm2
+# p3d_desactivate_col_check head.Glaser rarm.Grarm1
+# p3d_desactivate_col_check head.Glaser rarm.Grarm2
+# 
+# #LeftArm
+# p3d_desactivate_col_check larm.Glarm1 larm.Glarm3
+# p3d_desactivate_col_check larm.Glarm1 larm.Glarm4
+# p3d_desactivate_col_check larm.Glarm1 larm.Glarm5
+# p3d_desactivate_col_check larm.Glarm1 larm.Glarm7
+# 
+# p3d_desactivate_col_check larm.Glarm2 larm.Glarm4
+# p3d_desactivate_col_check larm.Glarm2 larm.Glarm5
+# p3d_desactivate_col_check larm.Glarm2 larm.Glarm7
+# 
+# p3d_desactivate_col_check larm.Glarm3 larm.Glarm5
+# p3d_desactivate_col_check larm.Glarm3 larm.Glarm7
+# p3d_desactivate_col_check larm.Glarm3 hand1.finger1.fingertip
+# p3d_desactivate_col_check larm.Glarm3 hand1.finger2.fingertip
+# 
+# p3d_desactivate_col_check larm.Glarm4 larm.Glarm7
+# p3d_desactivate_col_check larm.Glarm4 hand1.finger1.fingertip
+# p3d_desactivate_col_check larm.Glarm4 hand1.finger2.fingertip
+# 
+# p3d_desactivate_col_check larm.Glarm5 larm.Glarm7
+# p3d_desactivate_col_check larm.Glarm5 hand1.finger1.fingertip
+# p3d_desactivate_col_check larm.Glarm5 hand1.finger2.fingertip
+# 
+# p3d_desactivate_col_check hand1.finger1.fingertip hand1.finger2.fingertip
+# 
+# #Right Arm
+# p3d_desactivate_col_check rarm.Grarm1 rarm.Grarm3
+# p3d_desactivate_col_check rarm.Grarm1 rarm.Grarm4
+# p3d_desactivate_col_check rarm.Grarm1 rarm.Grarm5
+# p3d_desactivate_col_check rarm.Grarm1 rarm.Grarm7
+# 
+# p3d_desactivate_col_check rarm.Grarm2 rarm.Grarm4
+# p3d_desactivate_col_check rarm.Grarm2 rarm.Grarm5
+# p3d_desactivate_col_check rarm.Grarm2 rarm.Grarm7
+# 
+# p3d_desactivate_col_check rarm.Grarm3 rarm.Grarm5
+# p3d_desactivate_col_check rarm.Grarm3 rarm.Grarm7
+# p3d_desactivate_col_check rarm.Grarm3 hand0.finger1.fingertip
+# p3d_desactivate_col_check rarm.Grarm3 hand0.finger2.fingertip
+# 
+# p3d_desactivate_col_check rarm.Grarm4 rarm.Grarm7
+# p3d_desactivate_col_check rarm.Grarm4 hand0.finger1.fingertip
+# p3d_desactivate_col_check rarm.Grarm4 hand0.finger2.fingertip
+# 
+# p3d_desactivate_col_check rarm.Grarm5 rarm.Grarm7
+# p3d_desactivate_col_check rarm.Grarm5 hand0.finger1.fingertip
+# p3d_desactivate_col_check rarm.Grarm5 hand0.finger2.fingertip
+# 
+# p3d_desactivate_col_check hand0.finger1.fingertip hand0.finger2.fingertip
+# 
+# #######################
+# ###### CONSTRAINTS ####
+# #######################
+# 
+# # right
+# p3d_constraint p3d_pr2_arm_ik 7 6 7 9 10 11 12 13  1 32  0  1 8
+# 
+# # left
+# p3d_constraint p3d_pr2_arm_ik 7 16 17 19 20 21 22 23  1 33 0  1 18
+# 
+# p3d_set_cntrt_Tatt 2 1 0 0 -0.180000 0 1 0 0 0 0 1 0
+# p3d_set_cntrt_Tatt2 2 0 1 0 0 0 0 1 0 1 0 0 -0.180000
+# 
+# p3d_set_cntrt_Tatt 3 1 0 0 -0.180000 0 1 0 0 0 0 1 0
+# p3d_set_cntrt_Tatt2 3 0 1 0 0 0 0 1 0 1 0 0 -0.180000
+# 
+# # head
+# #p3d_constraint p3d_head_object_track 2 3 4  1 32  0 0
+# 
+# p3d_set_open_chain_config 0 0 0 0 0 0 4.146341 -2.390244 0 0 0 0 0.160000 0 0 0 -15.959833 28.386015 0.551220 -132.652479 -163.281034 -103.821279 -176.400661 1.463272 1.463272 15.959834 28.386015 -0.551220 -132.652479 163.281034 -103.821279 176.400660 0.946148 0.946148 0.885356 2.126606 0.627320 4.634146 -2.682927 1.082927 0 0 0 4.634146 -2.097561 1.082927 0 0 0
+# 
+# ##############################
+# ## MULTILOCALPATHGROUP #######
+# ##############################
+# p3d_set_robot_steering_method Multi-Localpath
+# 
+# #DO NOT DESACTIVATE ANY MULTILOCALPATH_GROUP
+# p3d_multi_localpath_group 1 33 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33
+# p3d_multi_localpath_data pr2 base R&S+linear 1 1
+# 
+# #p3d_multi_localpath_group 1 1 1
+# #p3d_multi_localpath_data pr2-base base R&S+linear 1 1
+# 
+# p3d_multi_localpath_group 1 1 1
+# p3d_multi_localpath_data base upBodyCart Linear
+# 
+# #p3d_multi_localpath_group 1 1 1
+# #p3d_multi_localpath_data baseSm upBodyCart Linear
+# 
+# p3d_multi_localpath_group 1 33 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33
+# p3d_multi_localpath_data upBody upBodyCart Linear
+# 
+# p3d_multi_localpath_group 1 33 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33
+# p3d_multi_localpath_data upBodySm upBodyCart Soft-Motion
+# 
+# p3d_multi_localpath_group 1 25 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25
+# p3d_multi_localpath_data jointsToExport joint Linear
+# 
+# 
+# #DO NOT REMOVE THE FOLLOWING LINE TO USE MULTILOCALPATH
+# p3d_set_robot_steering_method Multi-Localpath
+# 
+# 
+# p3d_set_object_base_and_arm_constraints 32 1 0  2 2 3
+# #p3d_set_arm_data cntrtId handType virtualObjectJntId
+# 
+# p3d_set_arm_data 2 3 32
+# p3d_set_arm_data 3 3 33
+# 
+# p3d_set_config_cost_threshold 0.20
+# 
+# p3d_set_active_robot PR2_ROBOT
+
+
+

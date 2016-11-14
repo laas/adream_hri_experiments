@@ -1,0 +1,23 @@
+<launch>
+    <rosparam command="load" file="$(find adream_hri_experiments)/parameters/move3d_common.yaml" />
+    <rosparam command="load" file="$(find adream_hri_experiments)/parameters/PR2_dof_corresp.yaml" />
+
+    <env name="ROSCONSOLE_CONFIG_FILE" 
+    value="$(find adream_hri_experiments)/parameters/debug_console.conf"/>
+
+	<!--node name="move3d_facts" pkg="move3d_facts" type="move3d_facts" output="screen" /-->  <!-- Launch the move3dfacts node -->
+	<node name="gtp" pkg="gtp" type="gtp" output="screen" />  <!-- Launch the gtp node -->
+
+    <rosparam command="load" file="$(find pdg)/params/toaster_simu.yaml" />
+    <node name="pdg" pkg="pdg" type="pdg" output="screen"/>  <!-- Launch pdg -->
+    <node name="agent_monitor" pkg="agent_monitor" type="agent_monitor" output="screen" />  <!-- Launch the agent monitor -->
+    <node name="area_manager" pkg="area_manager" type="area_manager" output="screen" />  <!-- Launch the area manager -->
+    <node name="toaster_visualizer" pkg="toaster_visualizer" type="toaster_visualizer" output="screen" />  <!-- Launch the visualization of toaster -->
+    <node name="toaster_simu" pkg="toaster_simu" type="toaster_simu" output="screen" />  <!-- Launch toaster simu -->
+
+
+    <!-- rosparam command="load" file="$(find database_manager)/params/Database.yaml" /-->
+    <!-- node name="run_server" pkg="database_manager" type="run_server" output="screen"/-->  <!-- Launch the toaster database -->
+    <!--node name="rviz" pkg="rviz" type="rviz" output="screen"/-->  <!-- Launch rviz -->
+</launch>
+
