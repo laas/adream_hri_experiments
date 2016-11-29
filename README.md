@@ -3,7 +3,9 @@ This package provides and record launch files, parameters, 3D models and other t
 
 ## CONFIGURE
 
-run `initialize_links.sh` to setup the symlinks in the p3d directory. You must have installed the move3d/assets prior to this ([see move3d doc](https://www.openrobots.org/wiki/move3d#P3D_Files)).
+The package needs to create symlinks to external files located in the move3d/assets ([see move3d doc](https://www.openrobots.org/wiki/move3d#P3D_Files)). They contain the robot and object descriptions used by move3d.
+
+These links are created when building the package (so when you call `catkin_make`), and will link to the directories `ADREAM/MACROS` and `urdf/COLLADA` in `$ROBOTPKG_BASE/share/move3d/assets`. That default base path can be changed using the ASSETS_DIR parameter. But it would be easier to run `initialize_links.sh /your/path/to/assets`. If you want to reset the links, you need to remove the file `p3d/.links_created`.
 
 ## Scope
 
