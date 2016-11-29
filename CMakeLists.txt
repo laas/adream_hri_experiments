@@ -9,6 +9,15 @@ find_package(catkin REQUIRED)
 ## System dependencies are found with CMake's conventions
 # find_package(Boost REQUIRED COMPONENTS system)
 
+set(ASSETS_DIR "" CACHE STRING "Path of to the assets directory where MACROS and COLLADA will be taken from (see initialize_links.sh)")
+
+add_custom_command(OUTPUT ${CMAKE_CURRENT_SOURCE_DIR}/p3d/.links_created
+    WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
+    COMMAND /usr/bin/env sh initialize_links.sh ${ASSETS_DIR}
+    )
+
+add_custom_target(Links ALL
+    DEPENDS ${CMAKE_CURRENT_SOURCE_DIR}/p3d/.links_created)
 
 ## Uncomment this if the package has a setup.py. This macro ensures
 ## modules and global scripts declared therein get installed
