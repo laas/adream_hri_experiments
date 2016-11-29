@@ -1,5 +1,5 @@
 <launch>
-    <rosparam command="load" file="$(find adream_hri_experiments)/parameters/move3d_common_gtp.yaml" />
+    <rosparam command="load" file="$(find adream_hri_experiments)/parameters/move3d_common_gtp_simu.yaml" />
     <rosparam command="load" file="$(find adream_hri_experiments)/parameters/PR2_dof_corresp.yaml" />
 
     <env name="ROSCONSOLE_CONFIG_FILE" 
@@ -8,18 +8,30 @@
 	<!--node name="move3d_facts" pkg="move3d_facts" type="move3d_facts" output="screen" /-->  <!-- Launch the move3dfacts node -->
 	<node name="gtp" pkg="gtp" type="gtp" output="screen" />  <!-- Launch the gtp node -->
 
-    <rosparam command="load" file="$(find pdg)/params/toaster_simu.yaml" />
+    <rosparam command="load" file="$(find adream_hri_experiments)/parameters/toaster_simu_gazebo.yaml" />
     <node name="pdg" pkg="pdg" type="pdg" output="screen"/>  <!-- Launch pdg -->
     <node name="agent_monitor" pkg="agent_monitor" type="agent_monitor" output="screen" />  <!-- Launch the agent monitor -->
     <node name="area_manager" pkg="area_manager" type="area_manager" output="screen" />  <!-- Launch the area manager -->
     <node name="toaster_visualizer" pkg="toaster_visualizer" type="toaster_visualizer" output="screen" />  <!-- Launch the visualization of toaster -->
     <node name="toaster_simu" pkg="toaster_simu" type="toaster_simu" output="screen" />  <!-- Launch toaster simu -->
 
-    <node name="setup_pdg" pkg="adream_hri_experiments" type="simu_set_gtp.py"/>
+    <node name="start_pr2motion" pkg="gtp_tutorials" type="start_setup_pr2motion.sh" output="screen"/>
 
+    <node name="fake_localization" pkg="fake_localization" type="fake_localization">
+        <param name="odom_frame_id" value="odom_combined"/>
+    </node>
+
+    <node name="set_pdg" pkg="rosservice" type="rosservice"
+        args="call --wait /pdg/manage_stream '{morseHuman: false, niutHuman: false, groupHuman: false, mocapHuman: false, adreamMocapHuman: false,
+          toasterSimuHuman: true, pr2Robot: true, spencerRobot: false, toasterSimuRobot: false,
+          toasterSimuObject: true, arObject: false, om2mObject: false}'"
+          />
+
+    <node name="setup_pdg" pkg="adream_hri_experiments" type="simu_set_gtp.py"/>
 
     <!-- rosparam command="load" file="$(find database_manager)/params/Database.yaml" /-->
     <!-- node name="run_server" pkg="database_manager" type="run_server" output="screen"/-->  <!-- Launch the toaster database -->
     <!--node name="rviz" pkg="rviz" type="rviz" output="screen"/-->  <!-- Launch rviz -->
 </launch>
+
 
