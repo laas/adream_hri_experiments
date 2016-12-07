@@ -15,7 +15,7 @@
     <node name="toaster_visualizer" pkg="toaster_visualizer" type="toaster_visualizer" output="screen" />  <!-- Launch the visualization of toaster -->
     <node name="toaster_simu" pkg="toaster_simu" type="toaster_simu" output="screen" />  <!-- Launch toaster simu -->
 
-    <node name="start_pr2motion" pkg="gtp_tutorials" type="start_setup_pr2motion.sh" output="screen"/>
+    <node name="start_pr2motion" pkg="adream_hri_experiments" type="start_setup_pr2motion.sh" output="screen"/>
 
     <node name="fake_localization" pkg="fake_localization" type="fake_localization">
         <param name="odom_frame_id" value="odom_combined"/>
