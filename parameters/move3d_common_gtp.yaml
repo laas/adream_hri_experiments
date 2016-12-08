@@ -14,5 +14,5 @@ human_mgmt:
 
 move3d:
     p3dFile: "package://adream_hri_experiments/p3d/base_pr2_gtp.p3d"
-    #update_base_only: true
+    update_base_only: true
 
